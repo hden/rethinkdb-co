@@ -1,0 +1,36 @@
+{
+  "name": "rethinkdb-co",
+  "version": "0.0.1",
+  "description": "Harness RethinkDB Callbacks with ECMAScript 6 Generators",
+  "main": "rethinkCo.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hden/rethinkdb-co.git"
+  },
+  "engines": {
+    "node": ">= 0.11.9"
+  },
+  "keywords": [
+    "rethinkdb",
+    "database",
+    "rethink",
+    "db",
+    "generator",
+    "co",
+    "es6",
+    "ecmascript6"
+  ],
+  "author": "Hao-kang Den <haokang.den@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hden/rethinkdb-co/issues"
+  },
+  "homepage": "https://github.com/hden/rethinkdb-co",
+  "dependencies": {
+    "co": "~3.0.1",
+    "rethinkdb": "~1.11.0-1"
+  }
+}
