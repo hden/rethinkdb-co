@@ -9,21 +9,24 @@ Harness RethinkDB Callbacks with ECMAScript 6 Generators
 
 ## Example
 
-    r   = require 'rethinkdb'
-    co  = require 'co'
+    var co, query, r, rco;
 
-    rco = require 'rethinkdb-co'
+    rco = require('rethinkdb-co');
+    r   = require('rethinkdb');
+    co  = require('co');
 
-    query = r.tableList()
+    query = r.tableList();
 
-    do co ->*
-      # get connection
-      connection = yield rco.connect()
-      # get result
-      result     = yield rco.run query
-      console.log 'result', result
-      # end connection
-      yield rco.disconnect()
+    co(function *() {
+      var connection, result;
+      // pause and wait for connection
+      connection = yield rco.connect();
+      // pause and wait for result
+      result = yield rco.run(query);
+      console.log('result', result);
+      // disconnect
+      yield rco.disconnect();
+    })();
 
 ## License
 
